@@ -13,6 +13,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyModel", "StudyModel\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyCommon", "StudyCommon\StudyCommon.csproj", "{2E87595B-D4C9-4373-88AE-15545C4CA29B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECF4D573-89C8-46A4-9F8C-14F4FE444A33}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{5196C001-FE2D-4BBD-878A-E1BB439593EF}"
+	ProjectSection(SolutionItems) = preProject
+		lib\System.Data.SQLite.dll = lib\System.Data.SQLite.dll
+		lib\System.Data.SQLite.xml = lib\System.Data.SQLite.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
