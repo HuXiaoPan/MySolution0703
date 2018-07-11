@@ -1,2 +1,3 @@
 C:\Users\Admin\Desktop\MySolution0703\StudyUI\bin\Debug\StudyUI.exe.config
 D:\HupanFiles\MySolution0703\StudyUI\bin\Debug\StudyUI.exe.config
+D:\GitWorkSpace\MySolution0703\StudyUI\bin\Debug\StudyUI.exe.config
