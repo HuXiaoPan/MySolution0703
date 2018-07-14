@@ -1,0 +1,5 @@
+D:\GitWorkSpace\MySolution0703\StudyModel\bin\Debug\StudyModel.dll
+D:\GitWorkSpace\MySolution0703\StudyModel\bin\Debug\StudyModel.pdb
+D:\GitWorkSpace\MySolution0703\StudyModel\obj\Debug\StudyModel.csprojResolveAssemblyReference.cache
+D:\GitWorkSpace\MySolution0703\StudyModel\obj\Debug\StudyModel.dll
+D:\GitWorkSpace\MySolution0703\StudyModel\obj\Debug\StudyModel.pdb

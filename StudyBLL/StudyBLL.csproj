@@ -40,7 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagerInfoBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudyDAL\StudyDAL.csproj">
+      <Project>{68FC2725-A737-4487-A57D-422CB86A005C}</Project>
+      <Name>StudyDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyModel\StudyModel.csproj">
+      <Project>{0BB5193D-97F0-4963-A47F-85CC8632070E}</Project>
+      <Name>StudyModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

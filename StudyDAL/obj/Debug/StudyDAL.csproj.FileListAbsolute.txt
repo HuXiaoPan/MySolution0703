@@ -1,0 +1,10 @@
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\StudyDAL.dll.config
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\StudyDAL.dll
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\StudyDAL.pdb
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\StudyModel.dll
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\System.Data.SQLite.dll
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\StudyModel.pdb
+D:\GitWorkSpace\MySolution0703\StudyDAL\bin\Debug\System.Data.SQLite.xml
+D:\GitWorkSpace\MySolution0703\StudyDAL\obj\Debug\StudyDAL.csprojResolveAssemblyReference.cache
+D:\GitWorkSpace\MySolution0703\StudyDAL\obj\Debug\StudyDAL.dll
+D:\GitWorkSpace\MySolution0703\StudyDAL\obj\Debug\StudyDAL.pdb

@@ -29,18 +29,31 @@
         private void InitializeComponent()
         {
             this.gboxList = new System.Windows.Forms.GroupBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
             this.gBoxControl = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.gboxList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.gBoxControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxList
             // 
-            this.gboxList.Controls.Add(this.dataGridView1);
+            this.gboxList.Controls.Add(this.dgvList);
             this.gboxList.Location = new System.Drawing.Point(12, 12);
             this.gboxList.Name = "gboxList";
             this.gboxList.Size = new System.Drawing.Size(390, 299);
@@ -48,8 +61,37 @@
             this.gboxList.TabStop = false;
             this.gboxList.Text = "列表";
             // 
+            // dgvList
+            // 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MID,
+            this.MName,
+            this.MType});
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(3, 17);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(384, 279);
+            this.dgvList.TabIndex = 0;
+            // 
             // gBoxControl
             // 
+            this.gBoxControl.Controls.Add(this.textBox3);
+            this.gBoxControl.Controls.Add(this.textBox2);
+            this.gBoxControl.Controls.Add(this.textBox1);
+            this.gBoxControl.Controls.Add(this.button3);
+            this.gBoxControl.Controls.Add(this.button2);
+            this.gBoxControl.Controls.Add(this.button1);
+            this.gBoxControl.Controls.Add(this.radioButton2);
+            this.gBoxControl.Controls.Add(this.radioButton1);
+            this.gBoxControl.Controls.Add(this.label4);
+            this.gBoxControl.Controls.Add(this.label3);
+            this.gBoxControl.Controls.Add(this.label2);
+            this.gBoxControl.Controls.Add(this.label1);
             this.gBoxControl.Location = new System.Drawing.Point(408, 12);
             this.gBoxControl.Name = "gBoxControl";
             this.gBoxControl.Size = new System.Drawing.Size(323, 299);
@@ -57,40 +99,132 @@
             this.gBoxControl.TabStop = false;
             this.gBoxControl.Text = "添加/修改";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MID,
-            this.MName,
-            this.MType});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(384, 279);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // MID
             // 
+            this.MID.DataPropertyName = "MID";
             this.MID.HeaderText = "编号";
             this.MID.Name = "MID";
             this.MID.ReadOnly = true;
             // 
             // MName
             // 
+            this.MName.DataPropertyName = "MName";
             this.MName.HeaderText = "名称";
             this.MName.Name = "MName";
             this.MName.ReadOnly = true;
             // 
             // MType
             // 
+            this.MType.DataPropertyName = "MType";
             this.MType.HeaderText = "类型";
             this.MType.Name = "MType";
             this.MType.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "编号：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "用户名：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "密码：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 144);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "类型：";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(53, 140);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "经理";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(154, 140);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(47, 16);
+            this.radioButton2.TabIndex = 5;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "员工";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(53, 190);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "添加";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(174, 190);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "取消";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(53, 244);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(196, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(74, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(243, 21);
+            this.textBox1.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(74, 53);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(243, 21);
+            this.textBox2.TabIndex = 10;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(74, 86);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(243, 21);
+            this.textBox3.TabIndex = 11;
             // 
             // FrmManagerInfo
             // 
@@ -101,8 +235,11 @@
             this.Controls.Add(this.gboxList);
             this.Name = "FrmManagerInfo";
             this.Text = "店员管理";
+            this.Load += new System.EventHandler(this.FrmManagerInfo_Load);
             this.gboxList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            this.gBoxControl.ResumeLayout(false);
+            this.gBoxControl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -110,10 +247,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gboxList;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.GroupBox gBoxControl;
         private System.Windows.Forms.DataGridViewTextBoxColumn MID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MName;
         private System.Windows.Forms.DataGridViewTextBoxColumn MType;
-        private System.Windows.Forms.GroupBox gBoxControl;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

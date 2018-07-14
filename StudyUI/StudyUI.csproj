@@ -79,6 +79,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudyBLL\StudyBLL.csproj">
+      <Project>{7D22FB03-ECA7-4929-AB8A-485649E9964D}</Project>
+      <Name>StudyBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudyModel\StudyModel.csproj">
+      <Project>{0BB5193D-97F0-4963-A47F-85CC8632070E}</Project>
+      <Name>StudyModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
