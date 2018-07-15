@@ -14,6 +14,7 @@ namespace StudyUI
 {
     public partial class FrmManagerInfo : Form
     {
+        ManagerInfoBll miBll = new ManagerInfoBll();
         public FrmManagerInfo()
         {
             InitializeComponent();
@@ -28,9 +29,50 @@ namespace StudyUI
         /// </summary>
         private void LoadList()
         {
-            ManagerInfoBll miBll = new ManagerInfoBll();
             dgvList.AutoGenerateColumns = false;
             dgvList.DataSource = miBll.GetList();
+        }
+
+        #region 保存按钮点击事件
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            ManagerInfo mi = new ManagerInfo()
+            {
+                MName = tbName.Text,
+                MPwd = tbPwd.Text,
+                MType = rb1.Checked ? 1 : 0
+            };
+            if (miBll.add(mi))
+            {
+                LoadList();
+                tbName.Clear();
+                tbPwd.Clear();
+                rb2.Checked = true;
+            }
+            else
+            {
+                MessageBox.Show("添加失败，请稍后重试！");
+            }
+        }
+        #endregion
+        #region 格式化MType的值
+        /// <summary>
+        /// 格式化MType的值
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                e.Value = Convert.ToInt32(e.Value) == 1 ? "经理" : "员工";
+            }
+        }
+        #endregion
+
+        private void dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
         }
     }
 }

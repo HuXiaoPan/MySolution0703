@@ -53,6 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StudyCommon\StudyCommon.csproj">
+      <Project>{2E87595B-D4C9-4373-88AE-15545C4CA29B}</Project>
+      <Name>StudyCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StudyModel\StudyModel.csproj">
       <Project>{0BB5193D-97F0-4963-A47F-85CC8632070E}</Project>
       <Name>StudyModel</Name>

@@ -9,3 +9,5 @@ D:\GitWorkSpace\MySolution0703\StudyBLL\bin\Debug\System.Data.SQLite.xml
 D:\GitWorkSpace\MySolution0703\StudyBLL\obj\Debug\StudyBLL.csprojResolveAssemblyReference.cache
 D:\GitWorkSpace\MySolution0703\StudyBLL\obj\Debug\StudyBLL.dll
 D:\GitWorkSpace\MySolution0703\StudyBLL\obj\Debug\StudyBLL.pdb
+D:\GitWorkSpace\MySolution0703\StudyBLL\bin\Debug\StudyCommon.dll
+D:\GitWorkSpace\MySolution0703\StudyBLL\bin\Debug\StudyCommon.pdb
