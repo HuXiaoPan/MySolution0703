@@ -45,8 +45,19 @@ namespace StudyBLL
         public bool edit(ManagerInfo mi)
         {
             return miDal.Update(mi) > 0;
-        } 
+        }
         #endregion
-    } 
+        #region 调用数据访问层的删除方法
+        /// <summary>
+        /// 调用数据库访问层的删除方法
+        /// </summary>
+        /// <param name="id">要删除数据的ID</param>
+        /// <returns>是否删除成功</returns>
+        public bool Remove(int id)
+        {
+            return miDal.Delete(id) > 0;
+        }
+        #endregion
+    }
 
 }

@@ -37,8 +37,8 @@
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbId = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
@@ -72,6 +72,7 @@
             this.MType});
             this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList.Location = new System.Drawing.Point(3, 17);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowTemplate.Height = 23;
@@ -107,8 +108,8 @@
             this.gBoxControl.Controls.Add(this.tbPwd);
             this.gBoxControl.Controls.Add(this.tbName);
             this.gBoxControl.Controls.Add(this.tbId);
-            this.gBoxControl.Controls.Add(this.button3);
-            this.gBoxControl.Controls.Add(this.button2);
+            this.gBoxControl.Controls.Add(this.btnDelete);
+            this.gBoxControl.Controls.Add(this.btnCancel);
             this.gBoxControl.Controls.Add(this.btnSave);
             this.gBoxControl.Controls.Add(this.rb2);
             this.gBoxControl.Controls.Add(this.rb1);
@@ -145,24 +146,27 @@
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(243, 21);
             this.tbId.TabIndex = 9;
+            this.tbId.Text = "添加时无编号";
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(53, 244);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(53, 244);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(196, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "删除选中员工";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(174, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(174, 190);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -261,8 +265,8 @@
         private System.Windows.Forms.TextBox tbPwd;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbId;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.RadioButton rb2;
         private System.Windows.Forms.RadioButton rb1;

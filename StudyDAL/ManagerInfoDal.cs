@@ -64,15 +64,31 @@ namespace StudyDAL
         /// <returns>影响的行数</returns>
         public int Update(ManagerInfo mi)
         {
-            string sql = "update ManagerInfo set mname=@name,mpwd=@pwd,mtype=@type where mid=@id";
-            SQLiteParameter[] ps =
+            List<SQLiteParameter> listPs = new List<SQLiteParameter>();
+            listPs.Add(new SQLiteParameter("@name", mi.MName));
+            string sql = "update ManagerInfo set mname=@name";
+            if (!mi.MPwd.Equals("不会是这个密码吧？"))
             {
-                new SQLiteParameter("@name",mi.MName),
-                new SQLiteParameter("@pwd",mi.MPwd),
-                new SQLiteParameter("@type",mi.MType),
-                new SQLiteParameter("@id",mi.MId)
-            };
-            return SQLiteHelper.ExecuteNonQuery(sql, ps);
+                sql += ",mpwd = @pwd";
+                listPs.Add(new SQLiteParameter("@pwd", MD5Helper.EncryptString(mi.MPwd)));
+            }
+            sql += ",mtype=@type where mid=@id";
+            listPs.Add(new SQLiteParameter("@type", mi.MType));
+            listPs.Add(new SQLiteParameter("@id", mi.MId));
+            return SQLiteHelper.ExecuteNonQuery(sql, listPs.ToArray());
+        }
+        #endregion
+        #region 数据库的删除操作
+        /// <summary>
+        /// 根据Id删除数据库数据
+        /// </summary>
+        /// <param name="id">要删除数据的id</param>
+        /// <returns>影响的行数</returns>
+        public int Delete(int id)
+        {
+            string sql = "delete from ManagerInfo where mid=@id";
+            SQLiteParameter p = new SQLiteParameter("@id", id);
+            return SQLiteHelper.ExecuteNonQuery(sql, p);
         } 
         #endregion
     }
