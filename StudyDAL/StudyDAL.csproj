@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ConnectionStringHelper.cs" />
     <Compile Include="ManagerInfoDal.cs" />
+    <Compile Include="MemberInfoDal.cs" />
+    <Compile Include="MemberTypeDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteHelper.cs" />
   </ItemGroup>

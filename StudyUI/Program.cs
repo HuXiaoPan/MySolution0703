@@ -16,7 +16,13 @@ namespace StudyUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmManagerInfo());
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();  //登录窗口
+            if (FrmLogin.isPass == true)    //判断是否登录成功
+            {
+                Application.Run(new FrmMain()); //运行主窗口
+            }
+            //Application.Run(new FrmMemberInfo());
         }
     }
 }

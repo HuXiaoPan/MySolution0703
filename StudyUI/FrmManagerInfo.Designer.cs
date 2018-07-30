@@ -240,11 +240,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(743, 323);
             this.Controls.Add(this.gBoxControl);
             this.Controls.Add(this.gboxList);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmManagerInfo";
             this.Text = "店员管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmManagerInfo_FormClosed);
             this.Load += new System.EventHandler(this.FrmManagerInfo_Load);
             this.gboxList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();

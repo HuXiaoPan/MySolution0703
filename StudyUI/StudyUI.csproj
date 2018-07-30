@@ -46,16 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmManagerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmManagerInfo.Designer.cs">
       <DependentUpon>FrmManagerInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMemberInfo.Designer.cs">
+      <DependentUpon>FrmMemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMemberType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMemberType.Designer.cs">
+      <DependentUpon>FrmMemberType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmManagerInfo.resx">
       <DependentUpon>FrmManagerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMemberInfo.resx">
+      <DependentUpon>FrmMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMemberType.resx">
+      <DependentUpon>FrmMemberType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,6 +125,37 @@
       <Project>{0BB5193D-97F0-4963-A47F-85CC8632070E}</Project>
       <Name>StudyModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\desk1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\desk2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\loginBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuBg.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuDish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuManager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuMember.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuOrder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuQuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\menuTable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

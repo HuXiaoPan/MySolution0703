@@ -11,10 +11,10 @@ namespace StudyDAL
 {
     public static class SQLiteHelper
     {
-        /// <summary>
-        /// 连接字符串
-        /// </summary>
-        private static string connStr = ConnectionStringHelper.GetSqliteConnectionString();
+
+        #region 变量定义
+        private static string connStr = ConnectionStringHelper.GetSqliteConnectionString(); //得到连接字符串
+        #endregion
 
         #region 执行并返回影响行数
         /// <summary>
@@ -25,14 +25,14 @@ namespace StudyDAL
         /// <returns>影响的行数</returns>
         public static int ExecuteNonQuery(string sqlText, params SQLiteParameter[] parameters)
         {
-            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))   //新建连接
             {
-                using (SQLiteCommand cmd = conn.CreateCommand())
+                using (SQLiteCommand cmd = conn.CreateCommand())    //新建指令
                 {
-                    conn.Open();
-                    cmd.CommandText = sqlText;
-                    cmd.Parameters.AddRange(parameters);
-                    return cmd.ExecuteNonQuery();
+                    conn.Open();    //打开连接
+                    cmd.CommandText = sqlText;  //设定脚本
+                    cmd.Parameters.AddRange(parameters);    //添加参数
+                    return cmd.ExecuteNonQuery();   //执行
                 }
             }
         }//End:ExecuteNonQuery 
@@ -47,14 +47,14 @@ namespace StudyDAL
         /// <returns>第一行第一列的值</returns>
         public static Object ExcuteScalar(string sqlText, params SQLiteParameter[] parameters)
         {
-            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))   //建立连接
             {
-                using (SQLiteCommand cmd = conn.CreateCommand())
+                using (SQLiteCommand cmd = conn.CreateCommand())    //建立命令
                 {
-                    conn.Open();
-                    cmd.CommandText = sqlText;
-                    cmd.Parameters.AddRange(parameters);
-                    return cmd.ExecuteScalar();
+                    conn.Open();    //打开连接
+                    cmd.CommandText = sqlText;  //定义语句
+                    cmd.Parameters.AddRange(parameters);    //添加参数
+                    return cmd.ExecuteScalar(); //执行
                 }
             }
         }//End:ExcuteScalar 
@@ -76,17 +76,17 @@ namespace StudyDAL
             //    return dt;
             //}
 
-            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))   //建立连接
             {
-                using (SQLiteCommand cmd = conn.CreateCommand())
+                using (SQLiteCommand cmd = conn.CreateCommand())    //建立命令
                 {
-                    conn.Open();
-                    cmd.CommandText = sqlText;
-                    cmd.Parameters.AddRange(parameters);
-                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                    conn.Open();    //打开连接
+                    cmd.CommandText = sqlText;  //定义语句
+                    cmd.Parameters.AddRange(parameters);    //添加参数
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))  //建立适配器
                     {
                         DataTable dt = new DataTable();
-                        adapter.Fill(dt);
+                        adapter.Fill(dt);   //适配器填充数据表
                         return dt;
                     }
                 }
@@ -103,12 +103,12 @@ namespace StudyDAL
         /// <returns>数据库的指针</returns>
         public static SQLiteDataReader ExecuteReader(string sqlText, params SQLiteParameter[] parameters)
         {
-            SQLiteConnection conn = new SQLiteConnection(connStr);
-            SQLiteCommand cmd = conn.CreateCommand();
-            conn.Open();
-            cmd.CommandText = sqlText;
-            cmd.Parameters.AddRange(parameters);
-            return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            SQLiteConnection conn = new SQLiteConnection(connStr);  //建立连接
+            SQLiteCommand cmd = conn.CreateCommand();               //建立命令
+            conn.Open();                                            //打开连接
+            cmd.CommandText = sqlText;                              //定义语句
+            cmd.Parameters.AddRange(parameters);                    //添加参数
+            return cmd.ExecuteReader(CommandBehavior.CloseConnection);  //执行，如果关闭执行，同时就关闭连接
         }//End:ExecuteReader 
         #endregion
     }

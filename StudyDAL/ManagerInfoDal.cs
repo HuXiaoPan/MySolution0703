@@ -22,10 +22,10 @@ namespace StudyDAL
         /// <returns>管理者数据对象集合</returns>
         public List<ManagerInfo> GetList()
         {
-            string sql = "select * from ManagerInfo";
-            DataTable dt = SQLiteHelper.ExecuteDataTable(sql);
-            List<ManagerInfo> List = new List<ManagerInfo>();
-            foreach (DataRow row in dt.Rows)
+            string sql = "select * from ManagerInfo";   //语句
+            DataTable dt = SQLiteHelper.ExecuteDataTable(sql);  //得到数据表
+            List<ManagerInfo> List = new List<ManagerInfo>();   //对象清单
+            foreach (DataRow row in dt.Rows)    //遍历数据表得到对象清单
             {
                 List.Add(new ManagerInfo()
                 {
@@ -46,14 +46,14 @@ namespace StudyDAL
         /// <returns>受影响行数</returns>
         public int Insert(ManagerInfo mi)
         {
-            string sql = "insert into ManagerInfo(mname,mpwd,mtype) values (@mname,@mpwd,@mtype)";
-            SQLiteParameter[] ps =
+            string sql = "insert into ManagerInfo(mname,mpwd,mtype) values (@mname,@mpwd,@mtype)";  //语句
+            SQLiteParameter[] ps =  //参数
             {
                 new SQLiteParameter("@mname",mi.MName),
                 new SQLiteParameter("@mpwd",MD5Helper.EncryptString(mi.MPwd)),
                 new SQLiteParameter("@mtype",mi.MType)
             };
-            return SQLiteHelper.ExecuteNonQuery(sql, ps);
+            return SQLiteHelper.ExecuteNonQuery(sql, ps);       //返回操作行数
         }
         #endregion
         #region 数据库的修改操作
@@ -64,18 +64,18 @@ namespace StudyDAL
         /// <returns>影响的行数</returns>
         public int Update(ManagerInfo mi)
         {
-            List<SQLiteParameter> listPs = new List<SQLiteParameter>();
-            listPs.Add(new SQLiteParameter("@name", mi.MName));
-            string sql = "update ManagerInfo set mname=@name";
-            if (!mi.MPwd.Equals("不会是这个密码吧？"))
+            List<SQLiteParameter> listPs = new List<SQLiteParameter>(); //可变参数集合
+            listPs.Add(new SQLiteParameter("@name", mi.MName));         //用户名参数
+            string sql = "update ManagerInfo set mname=@name";          //部分语句
+            if (!mi.MPwd.Equals("不会是这个密码吧？"))                   //判断是否修改过密码
             {
-                sql += ",mpwd = @pwd";
-                listPs.Add(new SQLiteParameter("@pwd", MD5Helper.EncryptString(mi.MPwd)));
+                sql += ",mpwd = @pwd";                                  //拼接密码部分
+                listPs.Add(new SQLiteParameter("@pwd", MD5Helper.EncryptString(mi.MPwd)));  //密码参数添加
             }
-            sql += ",mtype=@type where mid=@id";
+            sql += ",mtype=@type where mid=@id";    //添加尾部
             listPs.Add(new SQLiteParameter("@type", mi.MType));
             listPs.Add(new SQLiteParameter("@id", mi.MId));
-            return SQLiteHelper.ExecuteNonQuery(sql, listPs.ToArray());
+            return SQLiteHelper.ExecuteNonQuery(sql, listPs.ToArray()); //执行
         }
         #endregion
         #region 数据库的删除操作
@@ -86,10 +86,37 @@ namespace StudyDAL
         /// <returns>影响的行数</returns>
         public int Delete(int id)
         {
-            string sql = "delete from ManagerInfo where mid=@id";
-            SQLiteParameter p = new SQLiteParameter("@id", id);
-            return SQLiteHelper.ExecuteNonQuery(sql, p);
-        } 
+            string sql = "delete from ManagerInfo where mid=@id";   //语句
+            SQLiteParameter p = new SQLiteParameter("@id", id);     //参数
+            return SQLiteHelper.ExecuteNonQuery(sql, p);            //操作
+        }
+        #endregion
+
+        #region 登录信息
+        /// <summary>
+        /// 根据用户名找到数据
+        /// </summary>
+        /// <param name="UserName">用户名</param>
+        /// <returns>第一个数据对象</returns>
+        public ManagerInfo GetListByName(string UserName)
+        {
+            ManagerInfo mi = new ManagerInfo(); //新建数据对象
+            string sql = "select * from managerInfo where mname=@name"; //语句
+            SQLiteParameter p = new SQLiteParameter("@name", UserName); //参数
+            DataTable dt = SQLiteHelper.ExecuteDataTable(sql, p);   //得到数据表
+            if (dt.Rows.Count > 0)  //判断有没有数据，如果有，拿第一行
+            {
+                mi.MId = Convert.ToInt32(dt.Rows[0][0]);
+                mi.MName = UserName;
+                mi.MPwd = dt.Rows[0][2].ToString();
+                mi.MType = Convert.ToInt32(dt.Rows[0][3]);
+                return mi;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

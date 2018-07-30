@@ -19,3 +19,7 @@ D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.exe
 D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.pdb
 D:\GitWorkSpace\MySolution0703\StudyUI\bin\Debug\StudyCommon.dll
 D:\GitWorkSpace\MySolution0703\StudyUI\bin\Debug\StudyCommon.pdb
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmLogin.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMain.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMemberInfo.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMemberType.resources
