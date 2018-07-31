@@ -197,8 +197,14 @@ namespace StudyUI
         private void btnAddType_Click(object sender, EventArgs e)
         {
             FrmMemberType fmt = FrmMemberType.CreateFrm();  //调用窗口
-            fmt.Show(); //显示
+            DialogResult dr = fmt.ShowDialog();   //显示
             fmt.Focus();    //给焦点
+            if (dr == DialogResult.OK)  //如果模态窗口状态是OK，说明窗口进行过有效的添加修改删除事件，那么刷新
+            {
+                LoadList();
+                LoadTypeList();
+            }
+            
         }
         #endregion
 

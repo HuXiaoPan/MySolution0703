@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DishInfo.cs" />
+    <Compile Include="DishType.cs" />
     <Compile Include="LoginStatus.cs" />
     <Compile Include="ManagerInfo.cs" />
     <Compile Include="MemberInfo.cs" />

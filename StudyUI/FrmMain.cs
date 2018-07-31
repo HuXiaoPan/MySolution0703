@@ -40,7 +40,7 @@ namespace StudyUI
         }
         #endregion
 
-        #region 管理者餐单
+        #region 管理者菜单
         private void menuManagerInfo_Click(object sender, EventArgs e)
         {
             FrmManagerInfo frmMi = FrmManagerInfo.CreateForm(); //单例模式实例化对象
@@ -49,12 +49,21 @@ namespace StudyUI
         }
         #endregion
 
-        #region 会员餐单
+        #region 会员菜单
         private void menuMemberInfo_Click(object sender, EventArgs e)
         {
             FrmMemberInfo FrmMemberInfo = FrmMemberInfo.CreateFrmMi();
             FrmMemberInfo.Show();
             FrmMemberInfo.Focus();
+        }
+        #endregion
+
+        #region 菜品管理
+        private void menuDishInfo_Click(object sender, EventArgs e)
+        {
+            FrmDishInfo Frmdi = FrmDishInfo.CreateFrm();    //实例
+            Frmdi.Show();   //显示
+            Frmdi.Focus();  //给焦点
         } 
         #endregion
     }

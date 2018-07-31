@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{5196C001-FE2D-4BBD-878A-E1BB439593EF}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\胡畔\DotNet传智\07 .NET就业班-三层项目+SVN五天\2015-05-16.NET就业班-三层项目+SVN\资料\vsintlpack1\ChnCharInfo.dll = ..\..\胡畔\DotNet传智\07 .NET就业班-三层项目+SVN五天\2015-05-16.NET就业班-三层项目+SVN\资料\vsintlpack1\ChnCharInfo.dll
+		..\..\胡畔\DotNet传智\07 .NET就业班-三层项目+SVN五天\2015-05-16.NET就业班-三层项目+SVN\资料\vsintlpack1\ChnCharInfo.XML = ..\..\胡畔\DotNet传智\07 .NET就业班-三层项目+SVN五天\2015-05-16.NET就业班-三层项目+SVN\资料\vsintlpack1\ChnCharInfo.XML
 		lib\System.Data.SQLite.dll = lib\System.Data.SQLite.dll
 		lib\System.Data.SQLite.xml = lib\System.Data.SQLite.xml
 	EndProjectSection

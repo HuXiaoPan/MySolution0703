@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionStringHelper.cs" />
+    <Compile Include="DishInfoDal.cs" />
+    <Compile Include="DishTypeDal.cs" />
     <Compile Include="ManagerInfoDal.cs" />
     <Compile Include="MemberInfoDal.cs" />
     <Compile Include="MemberTypeDal.cs" />

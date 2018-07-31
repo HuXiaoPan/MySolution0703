@@ -23,3 +23,7 @@ D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmLogin.resources
 D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMain.resources
 D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMemberInfo.resources
 D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmMemberType.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmDishInfo.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\obj\Debug\StudyUI.FrmDishType.resources
+D:\GitWorkSpace\MySolution0703\StudyUI\bin\Debug\ChnCharInfo.dll
+D:\GitWorkSpace\MySolution0703\StudyUI\bin\Debug\ChnCharInfo.xml

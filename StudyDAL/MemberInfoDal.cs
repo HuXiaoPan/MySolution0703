@@ -19,7 +19,7 @@ namespace StudyDAL
         /// <returns>会员信息集合</returns>
         public List<MemberInfo> GetList(Dictionary<string, string> dic)
         {
-            string sql = "select mi.*,mt.MTitle from MemberInfo as mi join MemberTypeInfo as mt on mi.MTypeId=mt.MId where mi.MIsDelete = 0";   //语句
+            string sql = "select mi.*,mt.MTitle from MemberInfo as mi join MemberTypeInfo as mt on mi.MTypeId=mt.MId where mi.MIsDelete = 0 and mt.MIsDelete=0";   //语句
             if (dic.Count > 0)    //键值对内有值
             {
                 foreach (KeyValuePair<string, string> pair in dic)

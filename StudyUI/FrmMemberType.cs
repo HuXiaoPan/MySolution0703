@@ -15,12 +15,14 @@ namespace StudyUI
     public partial class FrmMemberType : Form
     {
         #region 定义变量
-        MemberTypeBll mtBll = new MemberTypeBll(); 
+        MemberTypeBll mtBll = new MemberTypeBll();  //业务逻辑层实例
+        DialogResult dr = DialogResult.Cancel;  //模态窗口的结果 
         #endregion
         private FrmMemberType()
         {
             InitializeComponent();
         }
+
         #region 单例模式
         /// <summary>
         /// 存储本窗口的实例
@@ -41,9 +43,9 @@ namespace StudyUI
         private void FrmMemberType_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmMT = null;   //关闭时释放窗口资源
+            this.DialogResult = dr; //给模态窗口结果
         } 
         #endregion
-
 
         #region 界面初始化
         private void FrmMemberType_Load(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace StudyUI
                 if (mtBll.addData(mt))  //添加成功刷新
                 {
                     LoadList();
+                    dr = DialogResult.OK;   //模态窗口结果
                 }
                 else
                 {
@@ -103,6 +106,7 @@ namespace StudyUI
                 if(mtBll.Edit(mt))
                 {
                     LoadList();
+                    dr = DialogResult.OK;
                 }
                 else
                 {
@@ -151,6 +155,7 @@ namespace StudyUI
                 {
                     LoadList();
                     resetForm();
+                    dr = DialogResult.OK;   //模态窗口结果
                 }
                 else
                 {
